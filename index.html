@@ -103,8 +103,8 @@
             width: 100%;
             max-width: 1400px;
             margin: 0 auto;
-            height: calc(100vh - 250px);
-            min-height: 600px;
+            height: auto;
+            min-height: unset;
             background-color: white;
             border-radius: 8px;
             overflow: hidden;
@@ -112,12 +112,12 @@
         }
 
         .map-container iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
-            height: 100%;
+            min-height: 350px;
+            height: 60vw;
+            max-height: 600px;
             border: none;
+            touch-action: manipulation;
         }
 
         /* Logo replacement */
@@ -238,7 +238,6 @@
             display: flex;
             justify-content: space-between;
             padding: 0 20px;
-            pointer-events: none;
         }
 
         .direction-arrow {
@@ -283,6 +282,11 @@
             text-transform: uppercase;
             letter-spacing: 0.5px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            max-width: 350px;
+            width: 100%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 12px;
         }
 
         .control-button:hover {
@@ -467,9 +471,10 @@
         }
 
         @media (max-width: 576px) {
-            .map-container {
-                min-height: 300px !important;
-                height: 300px !important;
+            .map-container iframe {
+                height: 60vh !important;
+                min-height: 350px !important;
+                max-height: none !important;
             }
             .walkthrough-container {
                 height: 300px !important;
@@ -507,7 +512,7 @@
         </div>
 
         <div class="map-container mx-auto" style="max-width:100%; min-width:0;">
-            <iframe href="https://www.mappedin.com/" title="Mappedin Map" name="Mappedin Map" allow="clipboard-write 'self' https://app.mappedin.com; web-share 'self' https://app.mappedin.com" scrolling="no" width="100%" height="400" frameborder="0" style="border:0; min-width:0;" src="https://app.mappedin.com/map/680bae89a662ac000bbae653?embedded=true"></iframe>
+            <iframe href="https://www.mappedin.com/" title="Mappedin Map" name="Mappedin Map" allow="clipboard-write 'self' https://app.mappedin.com; web-share 'self' https://app.mappedin.com" scrolling="no" width="100%" frameborder="0" style="border:0; min-width:0;" src="https://app.mappedin.com/map/680bae89a662ac000bbae653?embedded=true" allowfullscreen></iframe>
             <div class="map-branding"></div>
         </div>
 
